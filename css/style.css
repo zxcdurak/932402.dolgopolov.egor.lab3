@@ -65,21 +65,42 @@ aside {
     background-color: var(--color-secondary);
 }
 
-.projects {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+figure {
+    margin: 0;
+}
+
+.dishes {
+    display: flex;
+    flex-wrap: wrap;
     gap: 16px;
 }
 
-.project-card {
+.dish {
     position: relative;
     isolation: isolate;
+    flex: 1 1 100%;
     overflow: hidden;
     padding: 16px;
     border-radius: 16px;
 }
 
-.project-card::before {
+.dish img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.dish dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 8px;
+}
+
+.dish dd {
+    margin: 0;
+}
+
+.dish::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -88,7 +109,7 @@ aside {
     transition: filter 0.3s;
 }
 
-.project-card:hover::before {
+.dish:hover::before {
     filter: blur(4px);
 }
 
