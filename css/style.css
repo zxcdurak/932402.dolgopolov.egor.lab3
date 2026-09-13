@@ -66,14 +66,19 @@ aside {
     background-color: var(--color-secondary);
 }
 
-.projects {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+figure {
+    margin: 0;
+}
+
+.dishes {
+    display: flex;
+    flex-wrap: wrap;
     gap: 16px;
 }
 
-.project-card {
+.dish {
     position: relative;
+    flex: 1 1 100%;
     isolation: isolate;
     overflow: hidden;
     padding: 16px;
@@ -81,11 +86,27 @@ aside {
     transition: box-shadow 0.3s;
 }
 
-.project-card:hover {
+.dish img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.dish dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 8px;
+}
+
+.dish dd {
+    margin: 0;
+}
+
+.dish:hover {
     box-shadow: 0 4px 16px rgba(59, 42, 34, 0.35);
 }
 
-.project-card::before {
+.dish::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -94,7 +115,7 @@ aside {
     transition: filter 0.3s, transform 0.3s;
 }
 
-.project-card:hover::before {
+.dish:hover::before {
     filter: blur(8px);
     transform: scale(1.15);
 }
