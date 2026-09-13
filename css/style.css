@@ -3,9 +3,13 @@
     --color-secondary: #F6E3C6;
     --color-accent: #A34A2E;
     --color-text: #3B2A22;
-    --color-focus: #F2B705;
+    --color-focus: #8A5A00;
     --font-main: Arial, sans-serif;
     --font-heading: Georgia, serif;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -120,7 +124,7 @@ figure {
 
 .ingredients {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 16px;
 }
 
@@ -146,7 +150,8 @@ textarea {
 
 input,
 textarea {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     margin: 4px 0 12px;
     padding: 8px;
     border: 1px solid var(--color-text);
@@ -174,4 +179,24 @@ button:hover {
 
 button:active {
     transform: scale(0.95);
+}
+
+@media (min-width: 600px) {
+    .dish {
+        flex: 0 1 calc((100% - 16px) / 2);
+    }
+
+    .ingredients {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .dish {
+        flex: 0 1 calc((100% - 32px) / 3);
+    }
+
+    .ingredients {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
