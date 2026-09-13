@@ -75,19 +75,24 @@ figure {
     gap: 16px;
 }
 
+.dish,
+.ingredient {
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.dish img,
+.ingredient img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 .dish {
     position: relative;
     isolation: isolate;
     flex: 1 1 100%;
     overflow: hidden;
-    padding: 16px;
-    border-radius: 16px;
-}
-
-.dish img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
 }
 
 .dish dl {
@@ -111,6 +116,16 @@ figure {
 
 .dish:hover::before {
     filter: blur(4px);
+}
+
+.ingredients {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.ingredient {
+    background-color: var(--color-secondary);
 }
 
 .badge {
