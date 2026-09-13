@@ -1,0 +1,133 @@
+:root {
+    --color-primary: #FFF6E5;
+    --color-secondary: #F6E3C6;
+    --color-accent: #A34A2E;
+    --color-text: #3B2A22;
+    --color-focus: #F2B705;
+    --font-main: Arial, sans-serif;
+    --font-heading: Georgia, serif;
+}
+
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    font-family: var(--font-main);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+}
+
+h2 {
+    color: var(--color-accent);
+}
+
+header {
+    position: static;
+}
+
+header,
+footer {
+    padding: 20px;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+nav a {
+    margin-right: 16px;
+    color: var(--color-primary);
+}
+
+nav a:visited {
+    color: var(--color-secondary);
+}
+
+nav a:hover {
+    text-decoration: none;
+}
+
+aside {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: var(--color-secondary);
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.project-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: repeating-linear-gradient(45deg, var(--color-primary) 0 12px, var(--color-secondary) 12px 24px);
+    transition: filter 0.3s;
+}
+
+.project-card:hover::before {
+    filter: blur(4px);
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 2px 8px;
+    border-radius: 8px;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+label,
+input,
+textarea {
+    display: block;
+}
+
+input,
+textarea {
+    width: 300px;
+    margin: 4px 0 12px;
+    padding: 8px;
+    border: 1px solid var(--color-text);
+    border-radius: 8px;
+    font: inherit;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--color-focus);
+}
+
+button {
+    padding: 8px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-text);
+}
+
+button:active {
+    transform: scale(0.95);
+}
